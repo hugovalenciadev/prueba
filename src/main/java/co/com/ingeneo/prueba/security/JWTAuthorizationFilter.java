@@ -3,7 +3,6 @@ package co.com.ingeneo.prueba.security;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -52,8 +50,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                     .build()
                     .verify(token.replace("Bearer ", ""));
             
-            String claim = decodeJwt.getClaim("AUTHORITIES").asString();
-            System.out.println(claim);
+            String claim = decodeJwt.getClaim("AUTHORITIES").asString();            
             String user = decodeJwt.getSubject();
 
             if (user != null) {

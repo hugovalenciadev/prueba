@@ -30,7 +30,11 @@ El diagrama ER de la base actualmente es el siguiente:
 /warehouses, administración de puertos y/o bodegas.
 /deliveries, administración de planes de entrega.
  
-Para un mayor detalle de los endpoints disponibles consultar la documentación acá.
+Para un mayor detalle de los endpoints disponibles consultar la [documentación](https://ingeneo-prueba.herokuapp.com/swagger-ui/).
+
+Para autenticarse dentro de la documentación colocar el token JWT de la siguiente manera:
+
+![Swagger Auth](swagger_auth.jpg)
 
 ### Roles y Permisos
 
@@ -49,11 +53,11 @@ Los usuarios con rol user no pueden administrar los usuarios pero sí está perm
 A continuación se muestra un ejemplo (usando curl) para obtener un token JWT.
 
 ```
-curl -i -X POST -H "Content-Type:application/json" -d '{  "email" : "admin@ingeneo.com.co", "password": "admin1234"}' http://localhost:8080/login
+curl -i -X POST -H "Content-Type:application/json" -d '{  "email" : "admin@ingeneo.com.co", "password": "admin1234"}' https://ingeneo-prueba.herokuapp.com/login
 ```
 
 Luego, el token JWT obtenido se usa para autenticarse y utilizar los demás endpoints.
 
 ```
-curl -i -X POST -H "Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBpbmdlbmVvLmNvbS5jbyIsImV4cCI6MTY0NTMzNDM5N30.iYxoL-D9TZJN8Q2qzDFlWKLNFTNOnkReYKZkDDtAJTBB3W7Z1xfaSTGLon4UQOrHvNzYMHDKhb0MWE-ORlbHoA" -H "Content-Type:application/json" -d '{  "email" : "hugo@preba.com", "password": "123456", "role":"ROLE_USER"}' http://localhost:8080/users
+curl -i -X POST -H "Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBpbmdlbmVvLmNvbS5jbyIsImV4cCI6MTY0NTMzNDM5N30.iYxoL-D9TZJN8Q2qzDFlWKLNFTNOnkReYKZkDDtAJTBB3W7Z1xfaSTGLon4UQOrHvNzYMHDKhb0MWE-ORlbHoA" -H "Content-Type:application/json" -d '{  "email" : "hugo@preba.com", "password": "123456", "role":"ROLE_USER"}' https://ingeneo-prueba.herokuapp.com/users
 ```

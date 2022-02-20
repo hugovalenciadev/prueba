@@ -28,7 +28,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     public WebSecurity(UserDetailsServiceImpl userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailsService = userService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        System.out.println(bCryptPasswordEncoder.encode("admin1234"));
     }
 
     @Override
