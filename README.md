@@ -10,6 +10,7 @@ La aplicación es un REST API construida sobre la siguiente tecnología:
 * Spring (framework principal)
 * Spring Boot (para facilitar el setup del proyecto y las configuraciones)
 * Swagger 2.0 (documentación de endpoints)
+* Heroku (para desplegar el demo en la siguiente url:[https://ingeneo-prueba.herokuapp.com/](https://ingeneo-prueba.herokuapp.com/).)
 
 ### Base de datos
  
@@ -22,13 +23,13 @@ El diagrama ER de la base actualmente es el siguiente:
 
 ### Endpoints
 
-/login, para la autenticación de los usuarios devuelve un token JWT.
-/users, administración de usuarios (solo permitido para usuarios con rol ADMIN)
-/clients, administración de clientes.
-/products, catálogo de productos.
-/unitMeasures, catálogo de unidades de medida.
-/warehouses, administración de puertos y/o bodegas.
-/deliveries, administración de planes de entrega.
+* /login, para la autenticación de los usuarios devuelve un token JWT.
+* /users, administración de usuarios (solo permitido para usuarios con rol ADMIN)
+* /clients, administración de clientes.
+* /products, catálogo de productos.
+* /unitMeasures, catálogo de unidades de medida.
+* /warehouses, administración de puertos y/o bodegas.
+* /deliveries, administración de planes de entrega.
  
 Para un mayor detalle de los endpoints disponibles consultar la [documentación](https://ingeneo-prueba.herokuapp.com/swagger-ui/).
 

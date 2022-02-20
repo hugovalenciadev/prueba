@@ -43,6 +43,7 @@ public class SpringFoxConfig {
                     || name.equalsIgnoreCase("deliveryWarehouse")
                     || input.groupName().equalsIgnoreCase("profile-controller")
                     || input.groupName().equalsIgnoreCase("basic-error-controller")
+                    || input.groupName().equalsIgnoreCase("Delivery Entity")
                     ) {
                     return false;
                 }
